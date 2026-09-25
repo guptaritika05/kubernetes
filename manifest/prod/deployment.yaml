@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: irctc-prod
+  namespace: irctc-prod
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: irctc-prod
+  template:
+    metadata:
+      labels:
+        app: irctc-prod
+    spec:
+      containers:
+      - name: irctc-prod
+        image: CHANGE-IMAGE-NAME
+        imagePullPolicy:
+        ports:
+        - containerPort: 80
