@@ -48,8 +48,8 @@ jobs:
     - name: Deploy to EKS with Customization
       run: |
         kubectl config use-context arn:aws:eks:us-east-1:049429105695:cluster/eks-cluster  #CHANGE 
-        kubectl apply -f manifest/prod/namespace.yml
-        kubectl apply -f manifest/prod/deployment.yml
-        kubectl apply -f manifest/prod/service.yml 
-        kubectl apply -f manifest/prod/ingress.yml
+        kubectl apply -f manifest/prod/namespace.yaml
+        kubectl apply -f manifest/prod/deployment.yaml
+        kubectl apply -f manifest/prod/service.yaml 
+        kubectl apply -f manifest/prod/ingress.yaml
         kubectl get svc -n kws-prod
