@@ -39,9 +39,10 @@ jobs:
         
         docker build -f Dockerfile-$ENV --build-arg ARG_ENV=${ENV} -t $ECR_REGISTRY/$ECR_REPOSITORY:$BRANCH-$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$BRANCH-$IMAGE_TAG
-        echo $IMAGE_TAG
-        cd manifest/prod                                                             ## CHANGE DIR Name HERE!!!
-        sed -i "s|CHANGE-IMAGE-NAME|$ECR_REGISTRY/$ECR_REPOSITORY:$BRANCH-$IMAGE_TAG|g" deployment.yaml
+        echo "Built image tag: $IMAGE_TAG"
+        
+        # FIX: Modify the file using its full path so the changes persist in the workspace root
+        sed -i "s|CHANGE-IMAGE-NAME|$ECR_REGISTRY/$ECR_REPOSITORY:$BRANCH-$IMAGE_TAG|g" manifest/prod/deployment.yaml
 
     - name: Update kubeconfig
       run: |
