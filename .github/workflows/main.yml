@@ -103,35 +103,35 @@ jobs:
     # Connect kubectl to EKS Cluster
     # Updates ~/.kube/config
     # ======================================================
+        # ======================================================
+    # Connect kubectl to EKS Cluster
+    # Updates ~/.kube/config automatically
+    # ======================================================
     - name: Update kubeconfig
       run: |
         aws eks update-kubeconfig --region us-east-1 --name eks-cluster
 
     # ======================================================
     # Deploy Kubernetes Resources to EKS
-    # Namespace → Deployment → Service → Ingress
     # ======================================================
     - name: Deploy to EKS with Customization
       run: |
-
-        # Select EKS Cluster Context
-        kubectl config use-context arn:aws:eks:us-east-1:049429105695:cluster/eks-cluster   #CHANGE
-
-        # Create Namespace
+        # NOTE: Manual context switch hatayein, update-kubeconfig automatic use-context kar deta hai.
+        
+        # Create/Update Namespace
         kubectl apply -f manifest/prod/namespace.yaml
-
+        
         # Deploy Application
         kubectl apply -f manifest/prod/deployment.yaml
-
+        
         # Create Service
         kubectl apply -f manifest/prod/service.yaml
-
+        
         # Create Ingress
         kubectl apply -f manifest/prod/ingress.yaml
-
+        
         # Verify Service Creation
-        kubectl get svc -n irctc-prod
-        kubectl apply -f manifest/prod/deployment.yaml
-        kubectl apply -f manifest/prod/service.yaml
+        kubectl get svc -n kws-prod
+
         kubectl apply -f manifest/prod/ingress.yaml
         kubectl get svc -n kws-prod                        #CHANGE
