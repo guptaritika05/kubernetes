@@ -1,46 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Netflix Clone</title>
+  <link rel="stylesheet" href="netflix.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
-<body>
+<body style="background-color: black;">
+  <div class="main">
+    <nav>
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png" class="logo-img" alt="Netflix Logo"/>
+      </div>
+      <div class="nav-buttons">
+        <div class="btn language-button">
+          <span class="material-symbols-outlined translate-icon">g_translate</span>
+          <select name="lang" id="lang" class="lang-select">
+            <option value="eng">English</option>
+            <option value="hin">Hindi</option> 
+          </select>
+        </div>
+        <button class="btn btn-red">Sign In</button>
+      </div>
+    </nav>
 
-    <!-- Header Section -->
-    <header>
-        <h1>Welcome to My Website</h1>
-        <p>A simple HTML web page example built from scratch.</p>
-    </header>
+    <div class="box">
+      <div class="ready">
+        <h1>Unlimited movies, TV shows and more</h1>
+        <span>Starts at ₹149. Cancel at any time.</span>
+        <span>Ready to watch? Enter your email to create or restart your membership.</span>
+        <div class="email-form">
+          <input type="text" placeholder="Email Address" />
+          <button class="btn btn-red-gs">Get Started</button>
+        </div> 
+      </div>
+    </div>
+  </div>
 
-    <!-- Main Content Section -->
-    <main>
-        <section>
-            <h2>About Me</h2>
-            <p>Hello! I am learning how to structure web pages using HTML.</p>
-        </section>
+  <div style="background-color: black;">
+    <h1 style="margin-left: 160px; margin-top:20px;color: white;">More reason to join</h1>
+    <section class="separation" style="margin-top: 10px; background-color: black; margin-left: 160px;">
+      <div style="border: 5px solid white; background-color:rgb(68, 68, 112);height: 156px;width: 40%;border-radius: 20px;justify-content: center; align-items: center; padding:50px;">
+        <h4>Enjoy on your TV</h4>
+        <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+      </div>
 
-        <section>
-            <h2>My Favorite Things</h2>
-            <ul>
-                <li>Coding and web development</li>
-                <li>Reading technical blogs</li>
-                <li>Exploring new software tools</li>
-            </ul>
-        </section>
+      <div style="border: 5px solid white; background-color:rgb(68, 68, 112); height: 156px;width: 40%;border-radius: 20px;justify-content: center; align-items: center; padding:50px;">
+        <h4>Download your shows to watch offline</h4>
+        <p>Save your favourites easily and always have something to watch.</p>
+      </div>
 
-        <section>
-            <h2>Useful Links</h2>
-            <p>You can learn more by visiting the official documentation on the 
-               <a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a>.
-            </p>
-        </section>
-    </main>
+      <div style="border: 5px solid white; background-color:rgb(68, 68, 112);height: 156px;width: 40%;border-radius: 20px;justify-content: center; align-items: center; padding:50px;">
+        <h4>Watch everywhere</h4>
+        <p>Stream unlimited movies and TV shows on your phone, tablet, laptop and TV.</p>
+      </div>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2026 My First Website. All rights reserved.</p>
-    </footer>
+      <div style="border: 5px solid white; background-color:rgb(68, 68, 112);height: 156px;width: 40%;border-radius: 20px;justify-content: center; align-items: center; padding:50px;">
+        <h4>Create profiles for kids</h4>
+        <p>Send kids on adventures with their favourite characters in a space made just for them — free with your membership.</p>
+      </div>
+    </section> 
+  </div>
 
+  <section class="faq">
+    <h1 style="margin-left: 160px; margin-top:20px;color: white;">Frequently Asked Questions</h1>
+
+    <div class="first">
+      <p>What is Netflix?</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2000" height="34" color="#FFFFFF" fill="white" >
+         <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ></path> 
+        </svg>
+    </div>
+    <div class="firstanswer">
+      <h4>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.</h4>
+      <h4>You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. New TV shows and movies are added every week!</h4>
+    </div>
+
+    <div class="second">
+      <p>How much does Netflix cost?</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2000" height="34" color="#FFFFFF" fill="white" >
+         <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ></path> 
+        </svg>
+    </div>
+    <div class="secondanswer">
+      <h4>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹149 to ₹649 a month.</h4>
+    </div>
+
+    <div class="third">
+      <p>Where can I watch?</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2000" height="34" color="#FFFFFF" fill="white" >
+         <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ></path> 
+        </svg>
+    </div>
+    <div class="thirdanswer">
+      <h4>Watch anywhere, anytime on any internet-connected device including smart TVs, smartphones, tablets, and laptops.</h4>
+      <h4>You can also download shows on mobile to watch offline.</h4>
+    </div>
+
+    <div class="fourth">
+      <p>How do I cancel?</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2000" height="34" color="#FFFFFF" fill="white" >
+         <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ></path> 
+        </svg>
+    </div>
+    <div class="fourthanswer">
+      <h4>Netflix is flexible. Cancel your account online anytime in two clicks. No fees.</h4>
+    </div>
+
+    <div class="fifth">
+      <p>What can I watch on Netflix?</p>
+     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2000" height="34" color="#FFFFFF" fill="white" > 
+      <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ></path> 
+    </svg>
+    </div>
+    <div class="fifthanswer">
+      <h4>Netflix has an extensive library of films, documentaries, shows, anime, and more. Watch as much as you want, anytime.</h4>
+    </div>
+
+    <div class="sixth">
+      <p>Is Netflix good for kids?</p>
+     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2000" height="34" color="#FFFFFF" fill="white" > 
+      <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ></path> 
+    </svg>
+    </div>
+    <div class="sixthanswer">
+      <h4>The Netflix Kids experience gives parents control while kids enjoy family-friendly content.</h4>
+      <h4>Profiles come with parental controls and maturity filters.</h4>
+    </div>
+  </section>
+
+  <h4 style="color: white; text-align: center; margin-top: 115px;">
+    Ready to watch? Enter your email to create or restart your membership.
+  </h4>
+  <div class="email-form" style="gap: 20px;">
+    <input type="text" placeholder="Email Address" />
+    <button class="btn btn-red-gs">Get Started</button>
+  </div>
+
+  <hr style="border: none; height: 2px; background-color: #333;">
+
+  <!-- <footer>
+    <h3 style="color: white; margin-left: 160px; margin-top: 115px;">
+      Questions? Call <u>000-800-919-1743</u>
+    </h3>
+
+    <section class="grid">
+      <div><h5><u>FAQ</u></h5></div>
+      <div><h5><u>Help Centre</u></h5></div>
+      <div><h5><u>Account</u></h5></div>
+      <div><h5><u>Media Centre</u></h5></div>
+    </section>
+
+    <section class="grid">
+      <div><h5><u>Investor Relations</u></h5></div>
+      <div><h5><u>Jobs</u></h5></div>
+      <div><h5><u>Ways to Watch</u></h5></div>
+      <div><h5><u>Terms of Use</u></h5></div>
+    </section>
+
+    <section class="grid">
+      <div><h5><u>Privacy</u></h5></div>
+      <div><h5><u>Cookie Preferences</u></h5></div>
+      <div><h5><u>Corporate Information</u></h5></div>
+      <div><h5><u>Contact Us</u></h5></div>
+    </section>
+
+    <section class="grid">
+      <div><h5><u>Speed Test</u></h5></div>
+      <div><h5><u>Legal Notices</u></h5></div>
+      <div><h5><u>Only on Netflix</u></h5></div>
+    </section>
+
+    <div class="nav-buttons" style="margin-left: 160px;">
+      <div class="btn language-button">
+        <span class="material-symbols-outlined translate-icon">g_translate</span>
+        <select name="lang" id="lang" class="lang-select">
+          <option value="eng">English</option>
+          <option value="hin">Hindi</option> 
+        </select>
+      </div>
+      <div>
+        <h3 style="margin-left: 130px; color: aliceblue;">Netflix India</h3>
+      </div>
+    </div>
+  </footer> -->
+
+  <footer style="background-color: black; color: white; padding: 60px 160px; font-family: Arial, sans-serif;">
+  <h3 style="margin-bottom: 30px;">
+    Questions? Call <u>000-800-919-1743</u>
+  </h3>
+
+  <section class="grid" 
+           style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px 40px; margin-bottom: 30px;">
+    <div><h5><u>FAQ</u></h5></div>
+    <div><h5><u>Help Centre</u></h5></div>
+    <div><h5><u>Account</u></h5></div>
+    <div><h5><u>Media Centre</u></h5></div>
+
+    <div><h5><u>Investor Relations</u></h5></div>
+    <div><h5><u>Jobs</u></h5></div>
+    <div><h5><u>Ways to Watch</u></h5></div>
+    <div><h5><u>Terms of Use</u></h5></div>
+
+    <div><h5><u>Privacy</u></h5></div>
+    <div><h5><u>Cookie Preferences</u></h5></div>
+    <div><h5><u>Corporate Information</u></h5></div>
+    <div><h5><u>Contact Us</u></h5></div>
+
+    <div><h5><u>Speed Test</u></h5></div>
+    <div><h5><u>Legal Notices</u></h5></div>
+    <div><h5><u>Only on Netflix</u></h5></div>
+  </section>
+
+  <div class="nav-buttons" style="display: flex; align-items: center; margin-top: 20px;">
+    <div class="btn language-button" 
+         style="display: flex; align-items: center; border: 1px solid gray; border-radius: 4px; padding: 5px 10px; background: transparent;">
+      <span class="material-symbols-outlined translate-icon" style="color: white; margin-right: 5px;">g_translate</span>
+      <select name="lang" id="lang" class="lang-select" 
+              style="background: transparent; color: white; border: none; outline: none;">
+        <option value="eng" style="color: black;">English</option>
+        <option value="hin" style="color: black;">Hindi</option>
+      </select>
+    </div>
+    <h3 style="margin-left: 20px; color: aliceblue;">Netflix India</h3>
+  </div>
+</footer>
+
+
+  <script src="netflix.js"></script>
 </body>
 </html>
