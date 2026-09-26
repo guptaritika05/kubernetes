@@ -1,234 +1,1238 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Netflix Clone</title>
-  <link rel="stylesheet" href="netflix.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.main {
+  background-image: url("./assets/img/bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(23, 23, 23, 0.9);
+  color: white;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  border: 1px solid rgba(243, 235, 235, 0.5);
+  background-color: rgba(27, 24, 24, 0.7);
+  color: #fff;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.btn-red {
+  background-color: red;
+  color: white;
+}
+
+.btn-red:hover {
+  background-color: darkred;
+}
+
+.btn-red-gs {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-red-gs:hover {
+  background-color: #b20710;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.box {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.ready {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.ready span {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+
+/* =========================
+   EMAIL FORM
+========================= */
+
+.email-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.email-form input {
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 4px;
+  background-color: rgba(27, 24, 24, 0.7);
+  border: 1px solid rgba(243, 235, 235, 0.5);
+  color: white;
+  min-width: 300px;
+}
+
+.email-form input::placeholder {
+  color: #ccc;
+}
+
+
+/* =========================
+   LANGUAGE
+========================= */
+
+.language-button {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(243, 235, 235, 0.5);
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.translate-icon {
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  margin-right: 6px;
+}
+
+.television-icon {
+  padding: 0;
+  margin-top: 30px;
+}
+
+.lang-select {
+  background: transparent;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  padding-right: 10px;
+}
+
+
+/* =========================
+   REASONS SECTION
+========================= */
+
+.separation {
+  position: relative;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1%;
+  margin-left: 44px;
+}
+
+.separation > div {
+  transition: 0.3s ease;
+}
+
+.separation > div:hover {
+  transform: translateY(-5px);
+}
+
+h4 {
+  color: white;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.first:hover,
+.second:hover,
+.third:hover,
+.fourth:hover,
+.fifth:hover,
+.sixth:hover {
+  background-color: #414141;
+  transition: 0.5s ease-in;
+}
+
+.first,
+.second,
+.third,
+.fourth,
+.fifth,
+.sixth {
+  background-color: rgb(45, 45, 45);
+  padding: 30px;
+  margin-left: 160px;
+  cursor: pointer;
+  margin-top: 20px;
+  color: white;
+  font-weight: bold;
+  width: 70%;
+  justify-content: center;
+}
+
+.first-svg {
+  z-index: 9999;
+}
+
+.first.active {
+  background-color: #e50914;
+  border-color: white;
+}
+
+
+/* =========================
+   FAQ ANSWERS
+========================= */
+
+.firstanswer,
+.secondanswer,
+.thirdanswer,
+.fourthanswer,
+.fifthanswer,
+.sixthanswer {
+  background-color: rgb(45, 45, 45);
+  padding: 30px;
+  margin-left: 160px;
+  cursor: pointer;
+  margin-top: 1px;
+  color: white;
+  font-weight: bold;
+  width: 70%;
+  justify-content: center;
+  font-size: 24px;
+  display: none;
+}
+
+.firstanswer.active,
+.secondanswer.active,
+.thirdanswer.active,
+.fourthanswer.active,
+.fifthanswer.active,
+.sixthanswer.active {
+  display: block;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 60px 160px;
+  font-family: Arial, sans-serif;
+}
+
+.grid {
+  color: #fff;
+  display: flex;
+  margin-left: 160px;
+  justify-content: space-between;
+}
+
+
+/* =========================
+   RESPONSIVE - TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  nav {
+    padding: 1.2rem;
+  }
+
+  .main {
+    min-height: 700px;
+    height: auto;
+  }
+
+  .box {
+    position: relative;
+    top: 0;
+    padding: 100px 20px 80px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .separation {
+    flex-direction: column;
+    margin-left: 20px !important;
+    margin-right: 20px;
+    gap: 15px;
+  }
+
+  .separation > div {
+    width: 100% !important;
+    height: auto !important;
+    padding: 25px !important;
+  }
+
+  .first,
+  .second,
+  .third,
+  .fourth,
+  .fifth,
+  .sixth,
+  .firstanswer,
+  .secondanswer,
+  .thirdanswer,
+  .fourthanswer,
+  .fifthanswer,
+  .sixthanswer {
+    margin-left: 20px;
+    width: calc(100% - 40px);
+  }
+
+  .faq > h1 {
+    margin-left: 20px !important;
+    font-size: 2rem;
+  }
+
+  footer {
+    padding: 40px 20px !important;
+  }
+
+  .grid {
+    margin-left: 0;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .logo-img {
+    height: 30px;
+  }
+
+  .btn {
+    padding: 7px 10px;
+    font-size: 14px;
+  }
+
+  .language-button {
+    padding: 3px 6px;
+  }
+
+  .lang-select {
+    font-size: 13px;
+  }
+
+  .ready h1 {
+    font-size: 1.8rem;
+  }
+
+  .ready span {
+    font-size: 1rem;
+  }
+
+  .email-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .email-form input {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .email-form .btn-red-gs {
+    width: 100%;
+  }
+
+  .first,
+  .second,
+  .third,
+  .fourth,
+  .fifth,
+  .sixth {
+    padding: 20px;
+  }
+
+  .firstanswer,
+  .secondanswer,
+  .thirdanswer,
+  .fourthanswer,
+  .fifthanswer,
+  .sixthanswer {
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+</style>
 </head>
+
+
 <body style="background-color: black;">
-  <div class="main">
-    <nav>
-      <div class="logo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png" class="logo-img" alt="Netflix Logo"/>
-      </div>
-      <div class="nav-buttons">
-        <div class="btn language-button">
-          <span class="material-symbols-outlined translate-icon">g_translate</span>
-          <select name="lang" id="lang" class="lang-select">
-            <option value="eng">English</option>
-            <option value="hin">Hindi</option> 
-          </select>
-        </div>
-        <button class="btn btn-red">Sign In</button>
-      </div>
-    </nav>
 
-    <div class="box">
-      <div class="ready">
-        <h1>Unlimited movies, TV shows and more</h1>
-        <span>Starts at ₹149. Cancel at any time.</span>
-        <span>Ready to watch? Enter your email to create or restart your membership.</span>
-        <div class="email-form">
-          <input type="text" placeholder="Email Address" />
-          <button class="btn btn-red-gs">Get Started</button>
-        </div> 
-      </div>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="main">
+
+  <nav>
+
+    <div class="logo">
+
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
+        class="logo-img"
+        alt="Netflix Logo"
+      />
+
     </div>
+
+
+    <div class="nav-buttons">
+
+      <div class="btn language-button">
+
+        <span class="material-symbols-outlined translate-icon">
+          g_translate
+        </span>
+
+        <select name="lang" id="lang" class="lang-select">
+
+          <option value="eng">
+            English
+          </option>
+
+          <option value="hin">
+            Hindi
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <button class="btn btn-red">
+        Sign In
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  <div class="box">
+
+    <div class="ready">
+
+      <h1>
+        Unlimited movies, TV shows and more
+      </h1>
+
+      <span>
+        Starts at ₹149. Cancel at any time.
+      </span>
+
+      <span>
+        Ready to watch? Enter your email to create or restart your membership.
+      </span>
+
+
+      <div class="email-form">
+
+        <input
+          type="text"
+          placeholder="Email Address"
+        />
+
+        <button class="btn btn-red-gs">
+          Get Started
+        </button>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <div style="background-color: black;">
-    <h1 style="margin-left: 160px; margin-top:20px;color: white;">More reason to join</h1>
-    <section class="separation" style="margin-top: 10px; background-color: black; margin-left: 160px;">
-      <div style="border: 5px solid white; background-color:rgb(68, 68, 112);height: 156px;width: 40%;border-radius: 20px;justify-content: center; align-items: center; padding:50px;">
-        <h4>Enjoy on your TV</h4>
-        <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
-      </div>
+</div>
 
-      <div style="border: 5px solid white; background-color:rgb(68, 68, 112); height: 156px;width: 40%;border-radius: 20px;justify-content: center; align-items: center; padding:50px;">
-        <h4>Download your shows to watch offline</h4>
-        <p>Save your favourites easily and always have something to watch.</p>
-      </div>
 
-      <div style="border: 5px solid white; background-color:rgb(68, 68, 112);height: 156px;width: 40%;border-radius: 20px;justify-content: center; align-items: center; padding:50px;">
-        <h4>Watch everywhere</h4>
-        <p>Stream unlimited movies and TV shows on your phone, tablet, laptop and TV.</p>
-      </div>
 
-      <div style="border: 5px solid white; background-color:rgb(68, 68, 112);height: 156px;width: 40%;border-radius: 20px;justify-content: center; align-items: center; padding:50px;">
-        <h4>Create profiles for kids</h4>
-        <p>Send kids on adventures with their favourite characters in a space made just for them — free with your membership.</p>
-      </div>
-    </section> 
-  </div>
+<!-- =========================
+     MORE REASONS
+========================= -->
 
-  <section class="faq">
-    <h1 style="margin-left: 160px; margin-top:20px;color: white;">Frequently Asked Questions</h1>
+<div style="background-color: black;">
 
-    <div class="first">
-      <p>What is Netflix?</p>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2000" height="34" color="#FFFFFF" fill="white" >
-         <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ></path> 
-        </svg>
-    </div>
-    <div class="firstanswer">
-      <h4>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.</h4>
-      <h4>You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. New TV shows and movies are added every week!</h4>
-    </div>
+  <h1
+    style="margin-left: 160px; margin-top:20px;color: white;"
+  >
+    More reason to join
+  </h1>
 
-    <div class="second">
-      <p>How much does Netflix cost?</p>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2000" height="34" color="#FFFFFF" fill="white" >
-         <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ></path> 
-        </svg>
-    </div>
-    <div class="secondanswer">
-      <h4>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹149 to ₹649 a month.</h4>
+
+  <section
+    class="separation"
+    style="margin-top: 10px; background-color: black; margin-left: 160px;"
+  >
+
+
+    <div
+      style="
+        border: 5px solid white;
+        background-color:rgb(68, 68, 112);
+        height: 156px;
+        width: 40%;
+        border-radius: 20px;
+        justify-content: center;
+        align-items: center;
+        padding:50px;
+      "
+    >
+
+      <h4>
+        Enjoy on your TV
+      </h4>
+
+      <p>
+        Watch on smart TVs, PlayStation, Xbox, Chromecast,
+        Apple TV, Blu-ray players and more.
+      </p>
+
     </div>
 
-    <div class="third">
-      <p>Where can I watch?</p>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2000" height="34" color="#FFFFFF" fill="white" >
-         <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ></path> 
-        </svg>
-    </div>
-    <div class="thirdanswer">
-      <h4>Watch anywhere, anytime on any internet-connected device including smart TVs, smartphones, tablets, and laptops.</h4>
-      <h4>You can also download shows on mobile to watch offline.</h4>
+
+
+    <div
+      style="
+        border: 5px solid white;
+        background-color:rgb(68, 68, 112);
+        height: 156px;
+        width: 40%;
+        border-radius: 20px;
+        justify-content: center;
+        align-items: center;
+        padding:50px;
+      "
+    >
+
+      <h4>
+        Download your shows to watch offline
+      </h4>
+
+      <p>
+        Save your favourites easily and always have something to watch.
+      </p>
+
     </div>
 
-    <div class="fourth">
-      <p>How do I cancel?</p>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2000" height="34" color="#FFFFFF" fill="white" >
-         <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ></path> 
-        </svg>
-    </div>
-    <div class="fourthanswer">
-      <h4>Netflix is flexible. Cancel your account online anytime in two clicks. No fees.</h4>
+
+
+    <div
+      style="
+        border: 5px solid white;
+        background-color:rgb(68, 68, 112);
+        height: 156px;
+        width: 40%;
+        border-radius: 20px;
+        justify-content: center;
+        align-items: center;
+        padding:50px;
+      "
+    >
+
+      <h4>
+        Watch everywhere
+      </h4>
+
+      <p>
+        Stream unlimited movies and TV shows on your phone,
+        tablet, laptop and TV.
+      </p>
+
     </div>
 
-    <div class="fifth">
-      <p>What can I watch on Netflix?</p>
-     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2000" height="34" color="#FFFFFF" fill="white" > 
-      <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ></path> 
-    </svg>
-    </div>
-    <div class="fifthanswer">
-      <h4>Netflix has an extensive library of films, documentaries, shows, anime, and more. Watch as much as you want, anytime.</h4>
+
+
+    <div
+      style="
+        border: 5px solid white;
+        background-color:rgb(68, 68, 112);
+        height: 156px;
+        width: 40%;
+        border-radius: 20px;
+        justify-content: center;
+        align-items: center;
+        padding:50px;
+      "
+    >
+
+      <h4>
+        Create profiles for kids
+      </h4>
+
+      <p>
+        Send kids on adventures with their favourite characters
+        in a space made just for them — free with your membership.
+      </p>
+
     </div>
 
-    <div class="sixth">
-      <p>Is Netflix good for kids?</p>
-     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2000" height="34" color="#FFFFFF" fill="white" > 
-      <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ></path> 
-    </svg>
-    </div>
-    <div class="sixthanswer">
-      <h4>The Netflix Kids experience gives parents control while kids enjoy family-friendly content.</h4>
-      <h4>Profiles come with parental controls and maturity filters.</h4>
-    </div>
   </section>
 
-  <h4 style="color: white; text-align: center; margin-top: 115px;">
-    Ready to watch? Enter your email to create or restart your membership.
-  </h4>
-  <div class="email-form" style="gap: 20px;">
-    <input type="text" placeholder="Email Address" />
-    <button class="btn btn-red-gs">Get Started</button>
+</div>
+
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section class="faq">
+
+  <h1
+    style="
+      margin-left: 160px;
+      margin-top:20px;
+      color: white;
+    "
+  >
+    Frequently Asked Questions
+  </h1>
+
+
+  <!-- FAQ 1 -->
+
+  <div class="first">
+
+    <p>
+      What is Netflix?
+    </p>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="2000"
+      height="34"
+      color="#FFFFFF"
+      fill="white"
+    >
+
+      <path
+        d="M12 4V20M20 12H4"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+      </path>
+
+    </svg>
+
   </div>
 
-  <hr style="border: none; height: 2px; background-color: #333;">
 
-  <!-- <footer>
-    <h3 style="color: white; margin-left: 160px; margin-top: 115px;">
-      Questions? Call <u>000-800-919-1743</u>
-    </h3>
+  <div class="firstanswer">
 
-    <section class="grid">
-      <div><h5><u>FAQ</u></h5></div>
-      <div><h5><u>Help Centre</u></h5></div>
-      <div><h5><u>Account</u></h5></div>
-      <div><h5><u>Media Centre</u></h5></div>
-    </section>
+    <h4>
+      Netflix is a streaming service that offers a wide variety
+      of award-winning TV shows, movies, anime, documentaries
+      and more – on thousands of internet-connected devices.
+    </h4>
 
-    <section class="grid">
-      <div><h5><u>Investor Relations</u></h5></div>
-      <div><h5><u>Jobs</u></h5></div>
-      <div><h5><u>Ways to Watch</u></h5></div>
-      <div><h5><u>Terms of Use</u></h5></div>
-    </section>
+    <h4>
+      You can watch as much as you want, whenever you want,
+      without a single ad – all for one low monthly price.
+      New TV shows and movies are added every week!
+    </h4>
 
-    <section class="grid">
-      <div><h5><u>Privacy</u></h5></div>
-      <div><h5><u>Cookie Preferences</u></h5></div>
-      <div><h5><u>Corporate Information</u></h5></div>
-      <div><h5><u>Contact Us</u></h5></div>
-    </section>
+  </div>
 
-    <section class="grid">
-      <div><h5><u>Speed Test</u></h5></div>
-      <div><h5><u>Legal Notices</u></h5></div>
-      <div><h5><u>Only on Netflix</u></h5></div>
-    </section>
 
-    <div class="nav-buttons" style="margin-left: 160px;">
-      <div class="btn language-button">
-        <span class="material-symbols-outlined translate-icon">g_translate</span>
-        <select name="lang" id="lang" class="lang-select">
-          <option value="eng">English</option>
-          <option value="hin">Hindi</option> 
-        </select>
-      </div>
-      <div>
-        <h3 style="margin-left: 130px; color: aliceblue;">Netflix India</h3>
-      </div>
-    </div>
-  </footer> -->
 
-  <footer style="background-color: black; color: white; padding: 60px 160px; font-family: Arial, sans-serif;">
+  <!-- FAQ 2 -->
+
+  <div class="second">
+
+    <p>
+      How much does Netflix cost?
+    </p>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="2000"
+      height="34"
+      color="#FFFFFF"
+      fill="white"
+    >
+
+      <path
+        d="M12 4V20M20 12H4"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+      </path>
+
+    </svg>
+
+  </div>
+
+
+  <div class="secondanswer">
+
+    <h4>
+      Watch Netflix on your smartphone, tablet, Smart TV,
+      laptop, or streaming device, all for one fixed monthly fee.
+      Plans range from ₹149 to ₹649 a month.
+    </h4>
+
+  </div>
+
+
+
+  <!-- FAQ 3 -->
+
+  <div class="third">
+
+    <p>
+      Where can I watch?
+    </p>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="2000"
+      height="34"
+      color="#FFFFFF"
+      fill="white"
+    >
+
+      <path
+        d="M12 4V20M20 12H4"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+      </path>
+
+    </svg>
+
+  </div>
+
+
+  <div class="thirdanswer">
+
+    <h4>
+      Watch anywhere, anytime on any internet-connected device
+      including smart TVs, smartphones, tablets, and laptops.
+    </h4>
+
+    <h4>
+      You can also download shows on mobile to watch offline.
+    </h4>
+
+  </div>
+
+
+
+  <!-- FAQ 4 -->
+
+  <div class="fourth">
+
+    <p>
+      How do I cancel?
+    </p>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="2000"
+      height="34"
+      color="#FFFFFF"
+      fill="white"
+    >
+
+      <path
+        d="M12 4V20M20 12H4"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+      </path>
+
+    </svg>
+
+  </div>
+
+
+  <div class="fourthanswer">
+
+    <h4>
+      Netflix is flexible. Cancel your account online anytime
+      in two clicks. No fees.
+    </h4>
+
+  </div>
+
+
+
+  <!-- FAQ 5 -->
+
+  <div class="fifth">
+
+    <p>
+      What can I watch on Netflix?
+    </p>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="2000"
+      height="34"
+      color="#FFFFFF"
+      fill="white"
+    >
+
+      <path
+        d="M12 4V20M20 12H4"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+      </path>
+
+    </svg>
+
+  </div>
+
+
+  <div class="fifthanswer">
+
+    <h4>
+      Netflix has an extensive library of films, documentaries,
+      shows, anime, and more. Watch as much as you want, anytime.
+    </h4>
+
+  </div>
+
+
+
+  <!-- FAQ 6 -->
+
+  <div class="sixth">
+
+    <p>
+      Is Netflix good for kids?
+    </p>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="2000"
+      height="34"
+      color="#FFFFFF"
+      fill="white"
+    >
+
+      <path
+        d="M12 4V20M20 12H4"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+      </path>
+
+    </svg>
+
+  </div>
+
+
+  <div class="sixthanswer">
+
+    <h4>
+      The Netflix Kids experience gives parents control while
+      kids enjoy family-friendly content.
+    </h4>
+
+    <h4>
+      Profiles come with parental controls and maturity filters.
+    </h4>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     BOTTOM EMAIL
+========================= -->
+
+<h4
+  style="
+    color: white;
+    text-align: center;
+    margin-top: 115px;
+  "
+>
+  Ready to watch? Enter your email to create or restart your membership.
+</h4>
+
+
+<div
+  class="email-form"
+  style="gap: 20px;"
+>
+
+  <input
+    type="text"
+    placeholder="Email Address"
+  />
+
+  <button class="btn btn-red-gs">
+    Get Started
+  </button>
+
+</div>
+
+
+<hr
+  style="
+    border: none;
+    height: 2px;
+    background-color: #333;
+  "
+>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer
+  style="
+    background-color: black;
+    color: white;
+    padding: 60px 160px;
+    font-family: Arial, sans-serif;
+  "
+>
+
   <h3 style="margin-bottom: 30px;">
-    Questions? Call <u>000-800-919-1743</u>
+    Questions? Call
+    <u>000-800-919-1743</u>
   </h3>
 
-  <section class="grid" 
-           style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px 40px; margin-bottom: 30px;">
-    <div><h5><u>FAQ</u></h5></div>
-    <div><h5><u>Help Centre</u></h5></div>
-    <div><h5><u>Account</u></h5></div>
-    <div><h5><u>Media Centre</u></h5></div>
 
-    <div><h5><u>Investor Relations</u></h5></div>
-    <div><h5><u>Jobs</u></h5></div>
-    <div><h5><u>Ways to Watch</u></h5></div>
-    <div><h5><u>Terms of Use</u></h5></div>
+  <section
+    class="grid"
+    style="
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px 40px;
+      margin-bottom: 30px;
+    "
+  >
 
-    <div><h5><u>Privacy</u></h5></div>
-    <div><h5><u>Cookie Preferences</u></h5></div>
-    <div><h5><u>Corporate Information</u></h5></div>
-    <div><h5><u>Contact Us</u></h5></div>
+    <div>
+      <h5><u>FAQ</u></h5>
+    </div>
 
-    <div><h5><u>Speed Test</u></h5></div>
-    <div><h5><u>Legal Notices</u></h5></div>
-    <div><h5><u>Only on Netflix</u></h5></div>
+    <div>
+      <h5><u>Help Centre</u></h5>
+    </div>
+
+    <div>
+      <h5><u>Account</u></h5>
+    </div>
+
+    <div>
+      <h5><u>Media Centre</u></h5>
+    </div>
+
+
+    <div>
+      <h5><u>Investor Relations</u></h5>
+    </div>
+
+    <div>
+      <h5><u>Jobs</u></h5>
+    </div>
+
+    <div>
+      <h5><u>Ways to Watch</u></h5>
+    </div>
+
+    <div>
+      <h5><u>Terms of Use</u></h5>
+    </div>
+
+
+    <div>
+      <h5><u>Privacy</u></h5>
+    </div>
+
+    <div>
+      <h5><u>Cookie Preferences</u></h5>
+    </div>
+
+    <div>
+      <h5><u>Corporate Information</u></h5>
+    </div>
+
+    <div>
+      <h5><u>Contact Us</u></h5>
+    </div>
+
+
+    <div>
+      <h5><u>Speed Test</u></h5>
+    </div>
+
+    <div>
+      <h5><u>Legal Notices</u></h5>
+    </div>
+
+    <div>
+      <h5><u>Only on Netflix</u></h5>
+    </div>
+
   </section>
 
-  <div class="nav-buttons" style="display: flex; align-items: center; margin-top: 20px;">
-    <div class="btn language-button" 
-         style="display: flex; align-items: center; border: 1px solid gray; border-radius: 4px; padding: 5px 10px; background: transparent;">
-      <span class="material-symbols-outlined translate-icon" style="color: white; margin-right: 5px;">g_translate</span>
-      <select name="lang" id="lang" class="lang-select" 
-              style="background: transparent; color: white; border: none; outline: none;">
-        <option value="eng" style="color: black;">English</option>
-        <option value="hin" style="color: black;">Hindi</option>
+
+
+  <div
+    class="nav-buttons"
+    style="
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    "
+  >
+
+    <div
+      class="btn language-button"
+      style="
+        display: flex;
+        align-items: center;
+        border: 1px solid gray;
+        border-radius: 4px;
+        padding: 5px 10px;
+        background: transparent;
+      "
+    >
+
+      <span
+        class="material-symbols-outlined translate-icon"
+        style="
+          color: white;
+          margin-right: 5px;
+        "
+      >
+        g_translate
+      </span>
+
+      <select
+        name="lang"
+        class="lang-select"
+        style="
+          background: transparent;
+          color: white;
+          border: none;
+          outline: none;
+        "
+      >
+
+        <option
+          value="eng"
+          style="color: black;"
+        >
+          English
+        </option>
+
+        <option
+          value="hin"
+          style="color: black;"
+        >
+          Hindi
+        </option>
+
       </select>
+
     </div>
-    <h3 style="margin-left: 20px; color: aliceblue;">Netflix India</h3>
+
+
+    <h3
+      style="
+        margin-left: 20px;
+        color: aliceblue;
+      "
+    >
+      Netflix India
+    </h3>
+
   </div>
+
 </footer>
 
 
-  <script src="netflix.js"></script>
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const questionClasses = [
+    ".first",
+    ".second",
+    ".third",
+    ".fourth",
+    ".fifth",
+    ".sixth"
+  ];
+
+
+  questionClasses.forEach(function (selector) {
+
+    document
+      .querySelectorAll(selector)
+      .forEach(function (question) {
+
+        question.addEventListener("click", function () {
+
+          const answer = question.nextElementSibling;
+
+
+          if (answer) {
+
+            answer.classList.toggle("active");
+
+          }
+
+        });
+
+      });
+
+  });
+
+});
+
+</script>
+
+
 </body>
 </html>
+```
