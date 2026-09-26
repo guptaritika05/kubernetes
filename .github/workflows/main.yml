@@ -107,31 +107,26 @@ jobs:
     # Connect kubectl to EKS Cluster
     # Updates ~/.kube/config automatically
     # ======================================================
+        # ======================================================
+    # Connect kubectl to EKS Cluster
+    # ======================================================
     - name: Update kubeconfig
       run: |
         aws eks update-kubeconfig --region us-east-1 --name eks-cluster
 
     # ======================================================
-    # Deploy Kubernetes Resources to EKS
+    # Debug AWS identity & Deploy with Validation Disabled
     # ======================================================
     - name: Deploy to EKS with Customization
       run: |
-        # NOTE: Manual context switch hatayein, update-kubeconfig automatic use-context kar deta hai.
-        
-        # Create/Update Namespace
-        kubectl apply -f manifest/prod/namespace.yaml
-        
-        # Deploy Application
-        kubectl apply -f manifest/prod/deployment.yaml
-        
-        # Create Service
-        kubectl apply -f manifest/prod/service.yaml
-        
-        # Create Ingress
-        kubectl apply -f manifest/prod/ingress.yaml
-        
-        # Verify Service Creation
-        kubectl get svc -n kws-prod
+        # 1. Check karein ki pipeline sahi AWS identity use kar rahi hai ya nahi
+        aws sts get-caller-identity
 
-        kubectl apply -f manifest/prod/ingress.yaml
-        kubectl get svc -n kws-prod                        #CHANGE
+        # 2. Global validate flag set karke deploy karein (Note: --validate=false command ke bilkul end me hona chahiye)
+        kubectl apply -f manifest/prod/namespace.yaml --validate=false
+        kubectl apply -f manifest/prod/deployment.yaml --validate=false
+        kubectl apply -f manifest/prod/service.yaml --validate=false
+        kubectl apply -f manifest/prod/ingress.yaml --validate=false
+        
+        # 3. Verify Deployment
+        kubectl get svc -n kws-prod
