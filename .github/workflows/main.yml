@@ -55,4 +55,4 @@ jobs:
         kubectl apply -f manifest/prod/deployment.yaml
         kubectl apply -f manifest/prod/service.yaml
         kubectl apply -f manifest/prod/ingress.yaml
-        kubectl get svc -n irctc-prod
+        kubectl get svc -n kws-prod
