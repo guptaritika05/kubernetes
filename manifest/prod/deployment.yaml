@@ -18,6 +18,6 @@ spec:
       containers:
       - name: kws-prod
         image: CHANGE-IMAGE-NAME
-        imagePullPolicy: Always
+        
         ports:
         - containerPort: 80
